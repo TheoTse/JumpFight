@@ -15,7 +15,7 @@ public class  Ennemi_Patrol : MonoBehaviour
 
     void Update()
     {
-        Vector3 dir = target.opsition - transform.position;
+        Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * TimeoutException.deltaTime, Space.World);
 
         // Si l'ennemi est quasiment arrivé à sa destination
@@ -23,8 +23,10 @@ public class  Ennemi_Patrol : MonoBehaviour
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
+            graphics.flipX = !graphics.flipX;
         }
-    }
+    } 
 
 
 }
+

@@ -1,0 +1,17 @@
+using System ;
+using System.Timers ;
+public class Test_Timers {
+private static Timer timer ;
+public static void Main() {
+timer = new System.Timers.Timer() ;
+timer.Interval = 6000 ;
+timer.Elapsed += OnTimedEvent ;
+timer.AutoReset = true ;
+timer.Enabled = true ;
+Console.WriteLine( " Please enter any key to exit from the code anytime... " ) ;
+Console.ReadLine() ;
+}
+private static void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e) {
+Console.WriteLine( " Event  : {0} " , e.SignalTime ) ;
+}
+}

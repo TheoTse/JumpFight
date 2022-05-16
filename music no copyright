@@ -1,0 +1,12 @@
+/// <summary>
+ /// Add a Song to the Artist
+ /// </summary>
+ /// <param name="song">Song from Artist</param>
+ public void Add(Song song)
+ {
+     if (!songs.Contains(song))
+     {
+         song.Preformer = this;
+         songs.Add(song);
+     }
+ }
